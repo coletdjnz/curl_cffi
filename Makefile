@@ -42,7 +42,7 @@ upload: dist/*.whl
 	twine upload dist/*.whl
 
 test: install-local
-	pytest tests/unittest
+	python -bb -Werror -m pytest tests/unittest
 
 install-local: .preprocessed
 	pip install -e .
