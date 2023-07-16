@@ -144,7 +144,7 @@ class Curl:
             ret = lib._curl_easy_setopt(self._curl, option, self._headers)
         else:
             ret = lib._curl_easy_setopt(self._curl, option, c_value)
-        self._check_error(ret, "setopt(%s, %s)" % (option, value))
+        self._check_error(ret, "setopt(%s, %s)" % (option, repr(value)))
 
         if option == CurlOpt.CAINFO:
             self._is_cert_set = True
